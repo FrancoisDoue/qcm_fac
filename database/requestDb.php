@@ -5,9 +5,14 @@ function reqAdm(){
             WHERE `login_admin` = '%s';";
     return $req;
 }
-function insUser(){
-    // to modify
+function reqInsUser(){
     $req = "INSERT INTO `user` (`last_name`,`first_name`,`mail_user`,`psw_user`)
-            VALUES (:LASTNAME, :FIRSTNAME, :MAILUSER, :PSWUSER)";
+            VALUES ('%s', '%s', '%s', '%s')";
+    return $req;
+}
+function reqSearchUser(){
+    $req = "SELECT `id_user`
+            FROM `user`
+            WHERE `mail_user` = '%s'";
     return $req;
 }

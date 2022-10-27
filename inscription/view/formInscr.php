@@ -1,5 +1,5 @@
 <?php
-function formInscr(){
+function formInscr1(){
     $form = new Form;
     $form->surround = 'div'    
 ?>
@@ -13,7 +13,7 @@ function formInscr(){
     echo $form->input('mailUser','mail');
     echo $form->label('pswUser','Mot de passe');
     echo $form->input('pswUser','password');
-    echo $form->submit('S\'inscrire')
+    echo $form->submit('Continuer');
 ?>    
     </form>
 <?php } ?>

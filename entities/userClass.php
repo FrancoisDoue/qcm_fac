@@ -46,17 +46,27 @@ class User{
     public function getPsw(){
         return $this->pswUser;
     }
-    public function inscrUser($db, $req){
-        $req = $db->prepare($req);
-        // to modify
 
-        // $req->bindparam('LASTNAME', $this->lastName, PDO::PARAM_STR);
-        // $req->bindparam('FIRSTNAME', $this->firstName, PDO::PARAM_STR);
-        // $req->bindparam('MAILUSER', $this->mailUser, PDO::PARAM_STR);
-        // $req->bindparam('PSWUSER', $this->cryptPsw, PDO::PARAM_STR);
-        // // var_dump($req);
-        // $req->execute();
-        // $db = null;
+    public static function userExists(string $mail){
+        $mysqli = ConnectDb::mysqliDb();
+        $mysqli = $mysqli->query(sprintf(reqSearchUser() , $mysqli->real_escape_string($mail)));
+        $result = $mysqli->fetch_array();
+        $mysqli->close();
+        return !empty($result);
+    }
+
+    public function inscrUser(mysqli $db, $req){
+        $db->query(
+            sprintf(
+                $req,
+                $db->real_escape_string($this->getLastName()),
+                $db->real_escape_string($this->getFirstName()),
+                $db->real_escape_string($this->getMail()),
+                $db->real_escape_string($this->cryptPsw)
+            )
+        );
+        $db->close();
+        return true;
     }
 }
 // class UserG extends User{

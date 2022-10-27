@@ -5,3 +5,9 @@ function reqAdm(){
             WHERE `login_admin` = '%s';";
     return $req;
 }
+function insUser(){
+    // to modify
+    $req = "INSERT INTO `user` (`last_name`,`first_name`,`mail_user`,`psw_user`)
+            VALUES (:LASTNAME, :FIRSTNAME, :MAILUSER, :PSWUSER)";
+    return $req;
+}

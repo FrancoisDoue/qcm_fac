@@ -4,18 +4,17 @@ class User{
     private string $lastName;
     private string $firstName;
     private string $mailUser;
-    private string $pswUser;
     private string $cryptPsw;
-
+    
     public function __construct(string $last, string $first, string $mail, string $psw/*, int $id = null*/)
     {
         // $this->idUser = $id;
         $this->lastName = $last;
         $this->firstName = $first;
         $this->mailUser = $mail;
-        $this->pswUser = $psw;
         $this->cryptPsw = password_hash($psw,PASSWORD_BCRYPT);
     }
+    
     public function setId(int $param){
         $this->idUser = $param;
     }
@@ -28,8 +27,8 @@ class User{
     public function setMail(string $param){
         $this->mailUser = $param;
     }
-    public function setPsw(string $param){
-        $this->pswUser = $param;
+    public function setCryptPsw(string $param){
+        $this->cryptPsw = password_hash($param,PASSWORD_BCRYPT);
     }
     public function getId(){
         return $this->idUser;
@@ -43,10 +42,9 @@ class User{
     public function getMail(){
         return $this->mailUser;
     }
-    public function getPsw(){
-        return $this->pswUser;
+    public function comparePsw(string $clearPassword){
+        return password_verify($clearPassword,$this->cryptPsw);
     }
-
     public static function userExists(string $mail){
         $mysqli = ConnectDb::mysqliDb();
         $mysqli = $mysqli->query(sprintf(reqSearchUser() , $mysqli->real_escape_string($mail)));
@@ -69,14 +67,3 @@ class User{
         return true;
     }
 }
-// class UserG extends User{
-//     public int $idGroup;
-//     public function __construct(object $user, $idG)
-//     {
-//         // need to return with more info!!
-        
-//         // foreach($user as $prop){
-
-//         // }
-//     }
-// }

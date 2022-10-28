@@ -1,6 +1,6 @@
 <?php
 function formInscr1(){
-    $form = new Form;
+    $form = new Form();
     $form->surround = 'div'    
 ?>
     <form action="/inscription/?inscr=confirm" method="post">

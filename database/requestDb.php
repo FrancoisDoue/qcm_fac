@@ -16,3 +16,9 @@ function reqSearchUser(){
             WHERE `mail_user` = '%s'";
     return $req;
 }
+function reqGetUser(){
+    $req = "SELECT `id_user`,`last_name`,`first_name`,`mail_user`,`psw_user`
+            FROM `user`
+            WHERE `mail_user` = '%s';";
+    return $req;
+}

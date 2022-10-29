@@ -27,6 +27,9 @@ class User{
     public function setMail(string $param){
         $this->mailUser = $param;
     }
+    public function simpleSetPsw(string $param){
+        $this->cryptPsw = $param;
+    }
     public function setCryptPsw(string $param){
         $this->cryptPsw = password_hash($param,PASSWORD_BCRYPT);
     }
@@ -51,6 +54,12 @@ class User{
         $result = $mysqli->fetch_array();
         $mysqli->close();
         return !empty($result);
+    }
+    public static function getUser(mysqli $db, $req, $mail){
+        $db = $db->query(sprintf($req,$db->real_escape_string($mail)));
+        $result = $db->fetch_object();
+        $db->close();
+        return $result;
     }
 
     public function inscrUser(mysqli $db, $req){

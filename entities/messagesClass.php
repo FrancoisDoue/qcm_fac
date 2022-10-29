@@ -1,3 +1,4 @@
+
 <?php
 class ErrorMessage{
     public static function inscrMail(){
@@ -6,6 +7,18 @@ class ErrorMessage{
     }
     public static function errorPost(){
         echo '<h2 class="error">Veuillez remplir ce formulaire</h2>';
+        return false;
+    }    
+    public static function errorMail(){
+        echo '<h2 class="error">Cet utilisateur n\'existe pas. <a href="/inscription/">Inscrivez vous</a>.<h2>';
+        return false;
+    }
+    public static function errorConnect(){
+        echo '<h2 class="error">Mot de passe incorrect</h2>';
+        return false;
+    }
+    public static function errorField(){
+        echo '<h2 class="error">Ces champs sont obligatoires</h2>';
         return false;
     }
 }

@@ -2,7 +2,12 @@
 require "../routes/routes.php";
 getRequires();
 
-var_dump($_POST);
 $header = getHeader();
-$form = formConnect();
+
+if(tryConnexionUser()){
+    var_dump('on est sur la bonne voie');
+}else{
+    $form = formConnect();
+    // tryConnexionUser();
+}
 $footer = getFooter();

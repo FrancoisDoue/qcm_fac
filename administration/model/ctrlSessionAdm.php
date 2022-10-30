@@ -1,11 +1,7 @@
 <?php
 function ctrlSessionAdm(){
     if(isset($_SESSION['admin'])){
-        if($_SESSION['admin']->getConnected()){
-            return true;
-        }else{
-            return false;
-        }
+        return $_SESSION['admin']->getConnected();
     }else{
         return false;
     }

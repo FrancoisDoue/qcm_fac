@@ -3,7 +3,7 @@
 require "../routes/routes.php";
 getRequires();
 /* --- */
-$header = getHeader();
+$header = getHeader(modifyHeader());
 if(ctrlSessionAdm()){
 
 }else{

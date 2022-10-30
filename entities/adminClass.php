@@ -31,7 +31,7 @@ class Admin{
     // }
     /**
      * @param mysqli $db connexion to sql with mysqli
-     * @param string $req sql request with an string %s parameter for sprintf()
+     * @param string $req sql request with a string %s parameter for sprintf()
      * @return bool  
      */
     public function connectAdm(mysqli $mysqli, string $req){

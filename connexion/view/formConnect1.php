@@ -3,7 +3,7 @@ function formConnect(){
     $form = new Form($_POST);
     $form->surround = 'div';
 ?>
-
+<div id="backStart">Retour à <a href="/">l'accueil</a></div>
 <form action="" method="post">
 <?php
 echo $form->label('mailUser', 'Adresse Mail');

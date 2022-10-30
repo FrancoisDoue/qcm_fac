@@ -5,6 +5,7 @@ class User{
     private string $firstName;
     private string $mailUser;
     private string $cryptPsw;
+    private string $connected;
     
     public function __construct(string $last, string $first, string $mail, string $psw/*, int $id = null*/)
     {
@@ -12,6 +13,7 @@ class User{
         $this->lastName = $last;
         $this->firstName = $first;
         $this->mailUser = $mail;
+        $this->connected = false;
         $this->cryptPsw = password_hash($psw,PASSWORD_BCRYPT);
     }
     
@@ -26,6 +28,9 @@ class User{
     }
     public function setMail(string $param){
         $this->mailUser = $param;
+    }
+    public function setConnect(bool $param){
+        $this->connected = $param;
     }
     public function simpleSetPsw(string $param){
         $this->cryptPsw = $param;
@@ -44,6 +49,9 @@ class User{
     }
     public function getMail(){
         return $this->mailUser;
+    }
+    public function getConnect(){
+        return $this->connected;
     }
     public function comparePsw(string $clearPassword){
         return password_verify($clearPassword,$this->cryptPsw);

@@ -21,4 +21,9 @@ class ErrorMessage{
         echo '<h2 class="error">Ces champs sont obligatoires</h2>';
         return false;
     }
+    public static function endOfSession(){
+        echo    '<h2 class="error">Erreur de session, veuillez vous reconnecter</h2>
+                <h4 class="error">Si l\'erreur persiste, veuillez contacter votre administrateur</h4>';
+        return false;
+    }
 }

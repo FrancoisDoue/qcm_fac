@@ -1,6 +1,8 @@
 <?php
 /* ENTITIES */
 require "entities/adminClass.php";
+require "entities/userClass.php";
+require "entities/messagesClass.php";
 require "entities/formClass.php";
 /* --- */
 /* DATABASE */
@@ -22,6 +24,6 @@ require "common/view/footer.php";
 require 'accueil/view/accueilView.php';
 /* --- */
 /* CALL FUNCTIONS */
-$header = getHeader();
+$header = getHeader(modifyHeader());
 $tempAccuil = testAccueil();
 $footer = getFooter();

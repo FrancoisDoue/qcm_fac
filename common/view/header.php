@@ -1,5 +1,5 @@
 <?php
-function getHeader(){ ?>
+function getHeader($verif = false){ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +18,14 @@ function getHeader(){ ?>
 
             </header>
             <div id="account">
-                <a href="/connexion/"><button type="button">Connexion</button></a>
-                <a href="/inscription/"><button type="button">Inscription</button></a>
+                <?php 
+                    if($verif){
+                        echo '<a href="/disconnect/"><button type="button">Déconnexion</button></a>';
+                    }else{
+                        echo   '<a href="/connexion/"><button type="button">Connexion</button></a>
+                                <a href="/inscription/"><button type="button">Inscription</button></a>';
+                    }
+                ?>
             </div>
         </div>
         <div id="fullMain">

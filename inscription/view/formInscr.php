@@ -3,6 +3,7 @@ function formInscr1(){
     $form = new Form();
     $form->surround = 'div'    
 ?>
+    <div id="backStart">Retour à <a href="/">l'accueil</a></div>
     <form action="/inscription/?inscr=confirm" method="post">
 <?php
     echo $form->label('lastName', 'Nom');

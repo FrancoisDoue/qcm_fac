@@ -23,6 +23,7 @@ function tryConnexionUser(){
                 $_SESSION['user']->setId($val->id_user);
                 $_SESSION['user']->simpleSetPsw($val->psw_user);
                 if($_SESSION['user']->comparePsw($_POST['pswUser'])){
+                    $_SESSION['user']->setConnect(true);
                     return true;
                 }else{
                     unset($_SESSION['user']);

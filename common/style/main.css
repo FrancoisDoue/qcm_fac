@@ -37,13 +37,14 @@ body{
     bottom: 0;
     background-color: #6a6ad6;
 }
-header{
+div#fullHeader header{
     width: calc(100% - 150px);
     height: 145px;
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     border-radius: 0 0 50px 0;
     box-shadow: 2px 0px 5px #494994;
+    background-color: #6a6ad6;
 }
 #account{
     width: 150px;

@@ -1,5 +1,6 @@
 <?php
 require "../routes/routes.php";
+require "../routes/headPath.php";
 getRequires();
 
 $header = getHeader();

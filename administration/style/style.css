@@ -1,0 +1,48 @@
+#fullFooter{
+    display: none;
+}
+div#fullHeader{
+    background-color: #fff;
+    z-index: 1;
+}
+div#fullMain{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+#sider{
+    width: 15%;
+    min-height: 100%;
+}
+aside#aside{
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    background-color: #6a6ad6;
+}
+#aside a{
+    margin-bottom: 20px;
+}
+#aside a button{
+    min-width: 210px;
+    height: 35px;
+    border: none;
+    border: 2px  solid #494994;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 0px 5px #494994;
+    color: #494994;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#aside a button:hover{
+    box-shadow: 5px 0px 7px #494994;
+    font-size: 1.05rem;
+    transition: 0.3s;
+}

@@ -1,12 +1,13 @@
 <?php
+
+use DevQcm\DotEnv;
+(new DotEnv('../.env'))->load();
+
 class ConnectDb{
-    private const   HOST = 'localhost',
-                    DBNAME = 'qcmfac',
-                    LOGIN = 'root',
-                    PWD = 'root';
+
     public static function Db(){
         try{
-            $db = new PDO('mysql:host'.self::HOST.';dbname='.self::DBNAME.';charset=utf8',self::LOGIN,self::PWD);
+            $db = new PDO('mysql:host'.$_ENV['DBHOST'].';dbname='.$_ENV['DBNAME'].';charset=utf8',$_ENV['DBLOGIN'],$_ENV['DBPWD']);
             return $db;
         }catch(Exception $e){
             die('ERROR :'.$e->getMessage());
@@ -14,7 +15,7 @@ class ConnectDb{
     }
     public static function mysqliDb(){
         mysqli_report(MYSQLI_REPORT_ERROR|MYSQLI_REPORT_STRICT);
-        $mysqli = new mysqli(self::HOST,self::LOGIN,self::PWD,self::DBNAME);
+        $mysqli = new mysqli($_ENV['DBHOST'],$_ENV['DBLOGIN'],$_ENV['DBPWD'],$_ENV['DBNAME']);
         return $mysqli;
     }
 }

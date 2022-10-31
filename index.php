@@ -6,11 +6,12 @@ require "entities/messagesClass.php";
 require "entities/formClass.php";
 /* --- */
 /* DATABASE */
+require "common/model/ctrlSession.php";
+require "database/envParser.php";
 require "database/requestDb.php";
 require "database/connectDb.php";
 /* --- */
 /* COMMON MODELS */
-require "common/model/ctrlSession.php";
 
 /* --- */
 /* COMMON VIEWS */
@@ -24,6 +25,8 @@ require "common/view/footer.php";
 require 'accueil/view/accueilView.php';
 /* --- */
 /* CALL FUNCTIONS */
+// use env;
+
 $header = getHeader(modifyHeader());
 $tempAccuil = testAccueil();
 $footer = getFooter();

@@ -8,9 +8,14 @@ class DotEnv{
     protected string $path;
     public function __construct(string $path){
         if(!file_exists($path)){
-            throw new InvalidArgumentException(sprintf('%s est introuvable.',$path));
+            if(file_exists('../'.$path)){
+                $this->path = '../'.$path;
+            }else{
+                throw new InvalidArgumentException(sprintf('%s est introuvable.',$path));
+            }
+        }else{
+            $this->path = $path;
         }
-        $this->path = $path;
     }
     public function load(){
         if(!is_readable($this->path)){

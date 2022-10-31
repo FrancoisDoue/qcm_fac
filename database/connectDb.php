@@ -1,7 +1,7 @@
 <?php
 
 use DevQcm\DotEnv;
-(new DotEnv('../.env'))->load();
+(new DotEnv('.env'))->load();
 
 class ConnectDb{
 

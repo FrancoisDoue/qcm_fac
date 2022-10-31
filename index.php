@@ -4,10 +4,10 @@ require "entities/adminClass.php";
 require "entities/userClass.php";
 require "entities/messagesClass.php";
 require "entities/formClass.php";
+require "entities/envParser.php";
 /* --- */
 /* DATABASE */
 require "common/model/ctrlSession.php";
-require "database/envParser.php";
 require "database/requestDb.php";
 require "database/connectDb.php";
 /* --- */

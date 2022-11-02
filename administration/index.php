@@ -7,26 +7,29 @@ getRequires();
 /* --- */
 $header = getHeader(modifyHeader());
 $aside = asideAdm();
-/* just for test */
-$main = mainQuestion();
-/* end of test */
 if(ctrlSessionAdm()){
     if(empty($_GET)){
-        header("Location: /administration/?maintool=cat");
+        header("Location: /administration/?maintool=question");
     }else{
         if(isset($_GET['maintool'])){
             switch($_GET['maintool']){
                 case 'question':
-
-                    echo $_GET['maintool']; 
+                    mainQuestion($_GET['maintool']);
                     break;
-                case 'questions':
-                    
-                    echo $_GET['maintool']; 
+                case 'qcm':
+                    mainQuestion($_GET['maintool']);
+                    break;
+                case 'groupe':
+                    mainQuestion($_GET['maintool']);
+                    break;
+                case 'epreuve':
+                    mainQuestion($_GET['maintool']);
+                    break;
+                case 'resultat':
+                    mainQuestion($_GET['maintool']);
                     break;
                 default:
                     header("Location: /administration/?maintool=question");
-                    echo $_GET['maintool'];
                     break;
             }
         }else{

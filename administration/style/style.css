@@ -1,10 +1,10 @@
 #fullFooter{
     display: none;
 }
-div#fullHeader{
+/* div#fullHeader{
     background-color: #fff;
     z-index: 1;
-}
+} */
 div#fullMain{
     display: flex;
     flex-direction: row;
@@ -14,6 +14,33 @@ div#fullMain{
 #sider{
     width: 15%;
     min-height: 100%;
+}
+#maindiv{
+    width: 85%;
+}
+#maindiv nav{
+    background-color: #6a6ad6;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#maindiv nav a{
+    width: calc(100% / 5);
+}
+#maindiv nav a button{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border: 2px  solid #494994;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 0px 5px #494994;
+    color: #494994;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 aside#aside{
     width: 100%;
@@ -41,8 +68,48 @@ aside#aside{
     font-weight: bold;
     cursor: pointer;
 }
-#aside a button:hover{
+#aside a button:hover,#maindiv nav a button{
     box-shadow: 5px 0px 7px #494994;
     font-size: 1.05rem;
     transition: 0.3s;
+}
+#questionAjout{
+    width: 100%;
+    min-height: 100%;
+}
+#questionAjout div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#questionAjout div h2{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    height: 30px;
+    text-align: center;
+    color: #6a6ad6;
+    font-size: 1.2rem;
+}
+#questionAjout form{
+    width: 50%;
+}
+#questionAjout form div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#enonce{
+    width: 100%;
+    height: 80px;
+}
+#questionAjout form div textarea:not(#enonce){
+    margin: 10px;
+    width: calc(90% - 20px);
+}
+#questionAjout form div input[type=checkbox]{
+    width: 30px;
+    height: 30px;
 }

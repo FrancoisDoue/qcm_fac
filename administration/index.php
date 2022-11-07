@@ -12,26 +12,27 @@ if(ctrlSessionAdm()){
         header("Location: /administration/?maintool=question");
     }else{
         if(isset($_GET['maintool'])){
-            switch($_GET['maintool']){
-                case 'question':
-                    mainQuestion($_GET['maintool']);
-                    break;
-                case 'qcm':
-                    mainQuestion($_GET['maintool']);
-                    break;
-                case 'groupe':
-                    mainQuestion($_GET['maintool']);
-                    break;
-                case 'epreuve':
-                    mainQuestion($_GET['maintool']);
-                    break;
-                case 'resultat':
-                    mainQuestion($_GET['maintool']);
-                    break;
-                default:
-                    header("Location: /administration/?maintool=question");
-                    break;
-            }
+            mainQuestion($_GET['maintool']);
+            // switch($_GET['maintool']){
+            //     case 'question':
+            //         mainQuestion($_GET['maintool']);
+            //         break;
+            //     case 'qcm':
+            //         mainQuestion($_GET['maintool']);
+            //         break;
+            //     case 'groupe':
+            //         mainQuestion($_GET['maintool']);
+            //         break;
+            //     case 'epreuve':
+            //         mainQuestion($_GET['maintool']);
+            //         break;
+            //     case 'resultat':
+            //         mainQuestion($_GET['maintool']);
+            //         break;
+            //     default:
+            //         header("Location: /administration/?maintool=question");
+            //         break;
+            // }
         }else{
             header("Location: /administration/?maintool=question");
         }

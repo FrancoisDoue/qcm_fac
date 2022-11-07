@@ -49,7 +49,7 @@ function mainQuestion($get = 'default'){
 
                     break;
                 case 'cataff':
-
+                    viewAffCat();
                     break;
             }
         }

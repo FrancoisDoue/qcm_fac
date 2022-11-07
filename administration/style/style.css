@@ -68,7 +68,7 @@ aside#aside{
     font-weight: bold;
     cursor: pointer;
 }
-#aside a button:hover,#maindiv nav a button{
+#aside a button:hover,#maindiv nav a button:hover{
     box-shadow: 5px 0px 7px #494994;
     font-size: 1.05rem;
     transition: 0.3s;
@@ -113,3 +113,118 @@ aside#aside{
     width: 30px;
     height: 30px;
 }
+#questionAjout form button[type=submit]{
+    border: none;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #494994;
+    background-color: #6a6ad6;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+}
+#questionAjout form button[type=submit]:hover{
+    transition: 0.3s;
+    box-shadow: 2px 0px 5px #494994;
+    font-size: 1.15rem;
+}
+div.errordiv{
+    width: 85%;
+    margin: auto;
+}
+h2.error{
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+    background-color: #ff9696;
+    width: 100%;
+    border-radius: 2px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#confirm{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+#confirm form{
+    width: 40%;
+    min-width: 300px;
+    height: 40vh;
+    min-height: 500px;
+    background-color: #6a6ad6;
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 2px 0px 5px #494994;
+}
+#confirm form div{
+    margin-top: 50px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#confirm form div button, #confirm form div a{
+    min-width: 210px;
+    height: 35px;
+    border: none;
+    border: 2px  solid #494994;
+    /* background-color: #fff; */
+    border-radius: 4px;
+    box-shadow: 2px 0px 5px #494994;
+    color: #494994;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#confirm form div a{
+    color: #494994;
+    text-decoration: none;
+    background-color: #ff9696;
+    text-align: center;
+    padding: calc((35px - 20px)/2);
+    /* display: block;
+    text-align: center;
+    padding: auto; */
+}
+#confirm form div button.submit{
+    background-color: #78e278;
+}
+#confirm form div button:hover, #confirm form div a:hover{
+    box-shadow: 5px 0px 7px #494994;
+    font-size: 1.05rem;
+    transition: 0.3s;
+}
+#confirm form textarea{
+    resize: none;
+    width: calc(100% - 20px);
+    height: 150px;
+    margin-bottom: 10px;
+    border: none;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 4px;
+}
+#confirm form textarea.reponse-true{
+    background-color: #78e278;
+    height: 30px;
+}
+#confirm form textarea.reponse-false{
+    background-color: white;
+    height: 30px;
+}
+/* ajouter titre h2 */
